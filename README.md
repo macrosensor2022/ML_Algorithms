@@ -8,6 +8,7 @@ This repository contains implementations of fundamental machine learning algorit
 
 1. **Linear Regression** - Predicting continuous values
 2. **Logistic Regression** - Binary classification
+3. **Multivariate Linear Regression** - Predicting values using multiple features
 
 ## 🚀 Getting Started
 
@@ -16,7 +17,7 @@ This repository contains implementations of fundamental machine learning algorit
 Make sure you have Python 3.x installed along with the following libraries:
 
 ```bash
-pip install numpy pandas matplotlib scikit-learn
+pip install numpy pandas matplotlib scikit-learn word2number
 ```
 
 ### Running the Notebooks
@@ -67,6 +68,31 @@ jupyter notebook
 
 **Use Case:** Binary classification problems (e.g., spam detection, disease diagnosis, pass/fail prediction)
 
+---
+
+### 3. Multivariate Linear Regression
+
+**File:** `multivariate_linear_regression.ipynb`
+
+**Description:** Demonstrates multivariate linear regression using multiple independent variables to predict target values. Includes two real-world examples with comprehensive data preprocessing.
+
+**Key Features:**
+- Multiple feature regression (area, bedrooms, age → price)
+- Advanced data preprocessing techniques
+- Handling missing values with statistical methods
+- Text-to-number conversion using word2number library
+- Model coefficient interpretation
+- Performance evaluation with R² score
+- Real-world prediction examples
+
+**Examples Covered:**
+1. **Home Price Prediction:** Predicting house prices based on area, number of bedrooms, and age
+2. **Salary Prediction:** Predicting candidate salaries based on experience, test scores, and interview performance
+
+**Use Case:** Complex prediction tasks with multiple influencing factors (e.g., real estate pricing, salary estimation, sales forecasting)
+
+**Formula:** `y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ`
+
 ## 📈 Example Outputs
 
 ### Linear Regression
@@ -78,6 +104,13 @@ jupyter notebook
 - Estimates probability of passing/failing
 - Visualizes sigmoid curve and decision boundary
 - Shows probability distribution for predictions
+
+### Multivariate Linear Regression
+- Predicts target using multiple features simultaneously
+- Shows individual impact of each feature (coefficients)
+- Handles complex real-world datasets with missing values
+- Provides interpretable model equation
+- Demonstrates data preprocessing best practices
 
 ## 🛠️ Technologies Used
 
