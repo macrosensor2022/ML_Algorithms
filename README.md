@@ -9,6 +9,7 @@ This repository contains implementations of fundamental machine learning algorit
 1. **Linear Regression** - Predicting continuous values
 2. **Logistic Regression** - Binary classification
 3. **Multivariate Linear Regression** - Predicting values using multiple features
+4. **Gradient Descent** - Custom implementation of optimization algorithm
 
 ## 🚀 Getting Started
 
@@ -93,6 +94,51 @@ jupyter notebook
 
 **Formula:** `y = β₀ + β₁x₁ + β₂x₂ + ... + βₙxₙ`
 
+---
+
+### 4. Gradient Descent
+
+**File:** `gradient_descent.ipynb`
+
+**Description:** Custom implementation of the gradient descent optimization algorithm for linear regression. This demonstrates how machine learning algorithms learn from data by iteratively updating parameters to minimize error.
+
+**Key Features:**
+- From-scratch implementation without using sklearn's optimization
+- Configurable learning rate and iteration count
+- Parameter history tracking for convergence visualization
+- Cost function (MSE) calculation at each iteration
+- Comparison with sklearn's LinearRegression for validation
+- Two complete examples showing learning rate scaling
+
+**Examples Covered:**
+1. **Simple Dataset (y = 2x + 3):**
+   - Learning rate: 0.08
+   - Demonstrates basic gradient descent convergence
+   - Visualization of fitted line
+   
+2. **Test Scores Dataset (Math vs CS):**
+   - Learning rate: 0.0001 (adjusted for larger values)
+   - Real-world application with comparison to sklearn
+   - Shows importance of scaling learning rate with data magnitude
+
+**Key Concepts:**
+- **Cost Function:** Mean Squared Error (MSE) = (1/n) × Σ(y - ŷ)²
+- **Gradient Calculation:** Partial derivatives with respect to m and b
+- **Parameter Update:** θ = θ - α × ∇J(θ)
+  - m = m - learning_rate × ∂cost/∂m
+  - b = b - learning_rate × ∂cost/∂b
+
+**Important Learning:**
+⚠️ **Learning Rate Scaling** - The learning rate must be adjusted based on your data scale:
+- Small values (1-10): Use larger learning rate (e.g., 0.08)
+- Large values (50-100): Use smaller learning rate (e.g., 0.0001)
+- Too large → Parameters explode (NaN values)
+- Too small → Convergence takes too long
+
+**Use Case:** Understanding the fundamentals of how ML algorithms optimize parameters, custom optimization needs, educational purposes
+
+**Dataset:** Includes `test_scores.csv` with sample student data
+
 ## 📈 Example Outputs
 
 ### Linear Regression
@@ -111,6 +157,14 @@ jupyter notebook
 - Handles complex real-world datasets with missing values
 - Provides interpretable model equation
 - Demonstrates data preprocessing best practices
+
+### Gradient Descent
+- Shows step-by-step parameter optimization process
+- Visualizes convergence of cost function over iterations
+- Tracks evolution of slope (m) and intercept (b) parameters
+- Compares custom implementation with sklearn's results
+- Demonstrates impact of learning rate on training
+- Provides convergence plots and fitted line visualization
 
 ## 🛠️ Technologies Used
 
