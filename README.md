@@ -7,9 +7,14 @@ A collection of machine learning algorithm implementations using Python and scik
 This repository contains implementations of fundamental machine learning algorithms with detailed explanations and visualizations:
 
 1. **Linear Regression** - Predicting continuous values
-2. **Logistic Regression** - Binary classification
-3. **Multivariate Linear Regression** - Predicting values using multiple features
-4. **Gradient Descent** - Custom implementation of optimization algorithm
+2. **Logistic Regression (Binary)** - Student pass/fail prediction
+3. **Logistic Regression (Insurance)** - Bought-insurance prediction
+4. **Multiclass Logistic Regression (HR Analytics)** - Employee attrition prediction
+5. **Train/Test Split & Evaluation** - Practical workflow with accuracy metrics
+6. **Multivariate Linear Regression** - Predicting values using multiple features
+7. **Gradient Descent** - Custom implementation of optimization algorithm
+8. **Decision Tree (Salary)** - Predicting salary brackets using categorical features
+9. **Decision Tree (Titanic Survival)** - Survival prediction with tree-based model
 
 ## 🚀 Getting Started
 
@@ -54,7 +59,7 @@ jupyter notebook
 
 ---
 
-### 2. Logistic Regression
+### 2. Logistic Regression (Binary)
 
 **File:** `Logistic_regression.ipynb`
 
@@ -71,7 +76,61 @@ jupyter notebook
 
 ---
 
-### 3. Multivariate Linear Regression
+### 3. Logistic Regression (Insurance Purchase)
+
+**File:** `log_regression.ipynb`
+
+**Description:** Logistic regression model to predict whether a person buys insurance based on age, including a clear explanation of the logistic function and decision boundary.
+
+**Key Features:**
+- Binary classification (Buys Insurance / Does Not Buy)
+- Visualization of age vs purchase decision
+- Model training using scikit-learn
+- Probability prediction for new ages
+- Interpretation of model coefficients and decision threshold
+
+**Use Case:** Simple binary decision-making based on a single numeric feature.
+
+---
+
+### 4. Multiclass Logistic Regression (HR Analytics)
+
+**File:** `logistic_regression_multiclass.ipynb`
+
+**Description:** Multiclass logistic regression on an HR dataset to predict whether an employee will leave the company, with extensive feature engineering and evaluation.
+
+**Key Features:**
+- Multiclass / multinomial logistic regression
+- One-hot encoding for categorical features
+- Train/test split and accuracy evaluation
+- Confusion matrix and classification report
+- Detailed comments explaining each preprocessing and modeling step
+
+**Use Case:** Employee attrition prediction and similar HR analytics classification tasks.
+
+---
+
+### 5. Train/Test Split & Model Evaluation
+
+**File:** `train_test.ipynb`
+
+**Description:** Demonstrates how to correctly split data into training and test sets, train a multivariate linear regression model on car prices, and evaluate performance.
+
+**Key Features:**
+- `train_test_split` usage with `test_size` and `random_state` (with comments explaining each parameter)
+- Scatter plots with axis labels and titles (Mileage vs Price, Age vs Price)
+- Clear print of training/test set sizes
+- Side-by-side comparison of predicted vs actual prices
+- R² score, model coefficients, and intercept printed for interpretability
+- Illustrated best practices for avoiding data leakage
+
+**Dataset:** `carprices.csv` — car mileage, age, and sell price
+
+**Use Case:** Any supervised learning workflow where proper evaluation is required.
+
+---
+
+### 6. Multivariate Linear Regression
 
 **File:** `multivariate_linear_regression.ipynb`
 
@@ -96,7 +155,7 @@ jupyter notebook
 
 ---
 
-### 4. Gradient Descent
+### 7. Gradient Descent
 
 **File:** `gradient_descent.ipynb`
 
@@ -138,6 +197,42 @@ jupyter notebook
 **Use Case:** Understanding the fundamentals of how ML algorithms optimize parameters, custom optimization needs, educational purposes
 
 **Dataset:** Includes `test_scores.csv` with sample student data
+
+---
+
+### 8. Decision Tree (Salary Prediction)
+
+**File:** `decision_tree.ipynb` (salary example)
+
+**Description:** Uses a decision tree classifier to predict whether a salary is above a threshold (`salary_more_then_100k`) based on company, job title, and education degree.
+
+**Key Features:**
+- Label encoding of categorical variables (`company`, `job`, `degree`)
+- Creation of numeric feature matrix for tree input
+- Training and scoring a `DecisionTreeClassifier`
+- Prediction examples for different encoded feature combinations
+- Dedicated markdown explaining key tree hyperparameters:
+  - `criterion`, `max_depth`, `min_samples_split`, `min_samples_leaf`, `max_features`, `random_state`
+
+**Use Case:** Classification problems with categorical predictors and interpretable tree structure.
+
+---
+
+### 9. Decision Tree (Titanic Survival)
+
+**File:** `decision_tree.ipynb` (Titanic exercise)
+
+**Description:** Decision tree model built on the classic Titanic dataset to predict passenger survival using cleaned and encoded features.
+
+**Key Features:**
+- Feature selection and dropping of high-cardinality text fields
+- Missing values in `Age` and `Embarked` filled **before** label encoding (important: `LabelEncoder` cannot handle NaN)
+- Label encoding for `Sex` and `Embarked`
+- Train/test split with `random_state=42` for reproducibility
+- Training a `DecisionTreeClassifier` for survival prediction
+- Accuracy score on the hold-out test set
+
+**Use Case:** Tabular classification with a mix of numeric and categorical features, using a well-known benchmark dataset.
 
 ## 📈 Example Outputs
 
