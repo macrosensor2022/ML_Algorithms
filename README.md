@@ -15,6 +15,8 @@ This repository contains implementations of fundamental machine learning algorit
 7. **Gradient Descent** - Custom implementation of optimization algorithm
 8. **Decision Tree (Salary)** - Predicting salary brackets using categorical features
 9. **Decision Tree (Titanic Survival)** - Survival prediction with tree-based model
+10. **Support Vector Machine (SVM)** - Iris flower classification with kernel trick
+11. **Random Forest** - Digit recognition and Titanic survival with ensemble learning
 
 ## 🚀 Getting Started
 
@@ -260,6 +262,50 @@ jupyter notebook
 - Compares custom implementation with sklearn's results
 - Demonstrates impact of learning rate on training
 - Provides convergence plots and fitted line visualization
+
+---
+
+### 10. Support Vector Machine (SVM) — Iris Classification
+
+**File:** `SVM.ipynb`
+
+**Description:** Applies Support Vector Machine classification on the classic Iris dataset to distinguish between three flower species (setosa, versicolor, virginica) using sepal and petal measurements.
+
+**Key Features:**
+- Loads the built-in `sklearn` Iris dataset and builds a labeled DataFrame
+- Scatter plots comparing sepal and petal dimensions across species
+- Train/test split (80/20) with `random_state=42`
+- `SVC` model with `kernel='linear'`, `C=10`, `gamma=10`
+- Accuracy score on the test set (~96.7%)
+- Single-sample prediction example
+- **Exercise included:** Train SVM on the digits dataset with `rbf` and `linear` kernels, tune `C` and `gamma` for best accuracy
+
+**Dataset:** Built-in `sklearn` Iris dataset (150 samples, 4 features, 3 classes)
+
+**Use Case:** Multiclass classification on numeric features; understanding kernel-based separation of classes.
+
+---
+
+### 11. Random Forest — Digits & Titanic
+
+**File:** `Random_forest.ipynb`
+
+**Description:** Applies Random Forest classification on two datasets: the `sklearn` digits dataset (handwritten digit recognition) and the Titanic survival dataset.
+
+**Key Features:**
+- Loads and visualizes the digits dataset (8×8 pixel images)
+- Builds a DataFrame from the 64 pixel features + target label
+- Train/test split (80/20) for digits classification
+- **Titanic section:** loads `titanic.csv`, handles missing `Age` and `Embarked` values, applies one-hot encoding (`pd.get_dummies`) for `Sex` and `Embarked`
+- `RandomForestClassifier(n_estimators=60, max_depth=5, random_state=42)` trained on Titanic data
+- Accuracy score on the test set (~81.6%)
+- Feature importance ranking printed — `Sex_male` is the most important feature (43.4%)
+
+**Dataset:** Built-in `sklearn` digits dataset + `titanic.csv`
+
+**Use Case:** Ensemble learning for both image classification and tabular survival prediction; understanding feature importance in Random Forests.
+
+---
 
 ## 🛠️ Technologies Used
 
